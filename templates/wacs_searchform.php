@@ -4,12 +4,14 @@
  */
 
 ?>
+<h3>in form template</h3>
 
-<h2>searchform</h2>
-<form role="search" method="get" id="searchform" class="searchform" action="http://www.test.dev/">
-    <div>
-        <label class="screen-reader-text" for="s">Search for:</label>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="Search" />
-    </div>
-</form>
+
+<div class="wacs-form-wrapper">
+    
+    <select id="" name="">
+
+	
+    </select>
+
+</div>  <!-- ENDS .wacs_searchform -->
