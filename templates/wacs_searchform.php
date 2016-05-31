@@ -4,11 +4,7 @@
  */
 
 ?>
-<h3>in form template</h3>
-
-<div class="wacs-form-wrapper">
-    <input name="select" id="wacs-council-form"  />
-</div>  <!-- ENDS .wacs_searchform -->
+<div id="wacs-wrapper">
 
 <?php
 $dhb = get_terms( array(
@@ -16,24 +12,30 @@ $dhb = get_terms( array(
     'hide_empty' => false,
 ) );
 
+// echo "<option value='" .   $value->name  .  "'>" . $value->name . "   </option>" ;
+// echo $value->slug  . "<br /> " ;
 
 /* list all terms   */
- ?><select><?php  
-foreach( $dhb as $key => $value){
-    echo "<option value='" .   $value->name  .    "'  >" . $value->name .    "   </option> " ;
-    // echo $value->slug  . "<br /> " ;
-}
-?>
-</select>
+?> <p class="wacs-select-container">
+    <select><?php
+            foreach( $dhb as $key => $value){ ?>
+        <option value="<?= $value->name  ?>"  data-url="<?= $value->slug  ?>"><?= $value->name  ?></option>
+    <?php  } ?>
+    </select>
+</p>
+
+<div class="wacs-button-container">
+    <p>
+        <a class="btn wacs-button button" href="#">See what the candidates think</a>
+    </p>
+</div>
+
+
+</div>  <!-- ENDS .wacs-wrapper -->
+
 
 <script>
- var $ = jQuery.noConflict();
-$(document).ready(function($) {
-    
-    var wacsInput = $(".wacs-form-wrapper") ;
-
-    if ( wacsInput.length != 0  ) {
-	
-    }
-     
+$(document).ready(function(){
+     console.log("testing from within the template") ;
+}) ; 
 </script>
