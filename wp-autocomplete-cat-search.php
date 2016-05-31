@@ -23,9 +23,9 @@ define( "WPACS_PLUGINDIR",  plugin_dir_path(__FILE__) ) ;
 */
 add_action( 'wp_enqueue_scripts', 'wpcs_load_assets' );
 function wpcs_load_assets() {
-    wp_enqueue_script('angularjs', '//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js',  array() ) ;
-    wp_enqueue_script('wpacsjs', WPACS_PLUGINDIRURI . '/js/wpac.js', array('angularjs')) ;
-    wp_enqueue_style('wpac-styles', WPACS_PLUGINDIRURI . '/css/wpac.css', array()) ;
+    wp_enqueue_script('tokeninput-js',  plugin_dir_url( __FILE__ ) .  '/js/jquery.tokeninput.js',  array(jquery) ) ;
+    wp_enqueue_script('wpacs-js',  plugin_dir_url( __FILE__ ) .  '/js/wpac.js',  array(jquery) ) ;
+    wp_enqueue_style('easy-complete-styles', plugin_dir_url( __FILE__ ) .    '/css/token-input.css'  , array()) ; 
 }
 
 /*
