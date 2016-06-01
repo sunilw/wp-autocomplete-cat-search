@@ -33,11 +33,21 @@ function wpcs_load_assets() {
 *  get the form template
 */
 
-add_action('', '') ;
-function wpacs_publish_searchform() {
+
+function wpacs_publish_dhb_select() {
     ob_start() ;
-    include(  WPACS_PLUGINDIR   . '/templates/wacs_searchform.php') ;
+    include(  WPACS_PLUGINDIR   . '/templates/wacs_searchform_dhb.php') ;
     return ob_get_clean() ;
 }
-add_shortcode('wpac-cat-search', 'wpacs_publish_searchform'  ) ;
+add_shortcode('wpac-dhb-search', 'wpacs_publish_dhb_select' ) ;
+
+
+function wpacs_publish_council_select() {
+    ob_start() ;
+    include(  WPACS_PLUGINDIR   . '/templates/wacs_select_council.php') ;
+    return ob_get_clean() ;
+}
+add_shortcode('wpac-council-search', 'wpacs_publish_council_select' ) ;
+
+include(  WPACS_PLUGINDIR   . '/templates/test-ajax.php') ;
 
